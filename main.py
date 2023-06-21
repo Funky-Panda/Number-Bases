@@ -1,35 +1,42 @@
-def convertBinary(number,actualBase,base):
-    negitiveNum = False
-    if str(number)[0] == "-":
-        negitiveNum = True
+def convertBinary(number, actualBase, base):
 
+    negativeNum = False
+    if str(number)[0] == "-":
+        negativeNum = True
 
     if actualBase != 10:
-        number = convertBase(number,actualBase)
-    
+        number = convertBase(number, actualBase)
+
     binary = ""
+    questions = []
+
     while True:
-        newNumber = int(number/base)
+        newNumber = int(number / base)
         if newNumber == 0.0:
-            remainder = (number-newNumber*base)
-            number = newNumber
+            remainder = (number - newNumber * base)
 
             binary = str(remainder) + binary
+            questions.append([number, base, newNumber, remainder])
+            print(f"{number} = {newNumber} * {base} + {remainder}")
+            number = newNumber
             break
-        remainder = (number-newNumber*base)
+
+        remainder = (number - newNumber * base)
+        questions.append([number, base, newNumber, remainder])
+        print(f"{number} = {newNumber} * {base} + {remainder}")
         number = newNumber
 
         binary = str(remainder) + binary
 
-
-    if negitiveNum:
+    if negativeNum:
         strNumber = str(binary)[0]
         for i in range(1, len(str(binary))):
             if str(binary)[i] != "-":
-                strNumber+=str(binary)[i]
+                strNumber += str(binary)[i]
         return strNumber
 
-    return binary
+
+    return binary+convert_to_subscript(str(base))
 
 def convertBase(number, base):
     newNumber = 0
@@ -44,9 +51,19 @@ def convertBase(number, base):
     if negitiveNum:
         return -newNumber
     return newNumber
+
+def createSizeTable(data):
+    os.system("clear")
+    headers = ["Question", "Dividend", "Remainder"]
+    table_data = [[size, count] for size, count in data.items()]
+    print(tabulate(table_data, headers=headers, tablefmt="rounded_outline"))
         
 number = int(input("Please enter the number: "))
 actualBase = int(input("Please enter the base (0-10): "))
 base = int(input("Please enter the base that you want to convert to (0-10): "))
+
+def convert_to_subscript(number):
+    subscript_digits = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+    return str(number).translate(subscript_digits)
 
 print(convertBinary(number,actualBase,base))
