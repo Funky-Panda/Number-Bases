@@ -1,5 +1,14 @@
 def convertBinary(number, actualBase, base):
 
+    letters = {
+        10: 'A',
+        11: 'B',
+        12: 'C',
+        13: 'D',
+        14: 'E',
+        15: 'F'
+    }
+
     negativeNum = False
     if str(number)[0] == "-":
         negativeNum = True
@@ -14,6 +23,8 @@ def convertBinary(number, actualBase, base):
         newNumber = int(number / base)
         if newNumber == 0.0:
             remainder = (number - newNumber * base)
+            if remainder > 9:
+                remainder = letters[remainder]
 
             binary = str(remainder) + binary
             questions.append([number, base, newNumber, remainder])
@@ -22,6 +33,8 @@ def convertBinary(number, actualBase, base):
             break
 
         remainder = (number - newNumber * base)
+        if remainder > 9:
+            remainder = letters[remainder]
         questions.append([number, base, newNumber, remainder])
         print(f"{number} = {newNumber} * {base} + {remainder}")
         number = newNumber
