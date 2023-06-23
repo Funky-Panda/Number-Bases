@@ -1,0 +1,13 @@
+{
+    "name": "Private Study",
+    "short_name": "Private Study",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "icons/icon144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }
+    ]
+  }

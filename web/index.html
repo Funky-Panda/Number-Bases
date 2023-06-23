@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Base Converter</title>
+	<link rel="stylesheet" type="text/css" href="style.css?v=0.1">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+	<script src="app.js?v=6.0"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<link rel="icon" type="image/png" href="img/icon.png"/>
+	<!-- <link rel="manifest" href="manifest.json"> -->
+</head>
+<body>
+	<div class="container">
+		<div class="contact-box">
+			<!-- <div class="left"></div> -->
+			<div class="right" id="right">
+				<h2 id=study>Base Converter</h2>
+				<form  class="contact-form" method="post" onsubmit="sendContact(event)">
+                    <input type="number" class="field" placeholder="Number" id="number" required>
+                    <input type="number" class="field" placeholder="Base of that number" id="actualBase" min="2" max="62" required>
+                    <input type="number" class="field" placeholder="Base that you want to convert to" id="base" min="2" max="62" required>
+
+					<form  class="contact-form" method="post" onsubmit="sendContact(event)">
+						<input type="submit" class="button" value="Calculate" readonly>
+						<input class="button" id="downloadBtn" value="My website" style="margin-top: 10%;" onclick="window.open('https://www.funkypanda.me')" readonly>
+					</form>
+			</div>
+			<div class="answer" style="display: none;" id="answer">
+				<h2 id=study>The answer</h2>
+				<div class="working" id="working">
+				</div>
+				<h1 class="answer" id="finalAnswer">Final Answer: </h1>
+				<input class="button" value="Go Back" style="margin-top: 10%;" onclick="location.reload();" readonly>
+			</div>
+			
+		</div>
+	</div>
+	
+</body>
+</html>
