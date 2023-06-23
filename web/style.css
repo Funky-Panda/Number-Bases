@@ -30,9 +30,9 @@ body{
 	top: 0;
 	background: url("img/bg.jpg") no-repeat center;
 	background-size: cover;
-	filter: blur(30px);
+	filter: blur(0px);
 	z-index: -1;
-	border-radius: 10px;
+	/* border-radius: 10px; */
 }
 
 .contact-box{
@@ -78,14 +78,14 @@ h2:after{
     height: 4px;
     width: 100px;
     border-radius: 2px;
-    background-color: #3e37a0b7;
+    background-color: #ac8f11b7;
 }
 
 .field{
 	width: 100%;
 	border: 2px solid rgba(0, 0, 0, 0);
 	outline: none;
-	background-color: rgba(230, 230, 230, 0.6);
+	background-color: #ac901140;
 	padding: 0.5rem 1rem;
 	font-size: 1.1rem;
 	margin-bottom: 22px;
@@ -94,7 +94,7 @@ h2:after{
 }
 
 .field:hover{
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: #ac90117e;
 }
 
 textarea{
@@ -104,7 +104,7 @@ textarea{
 .btn{
 	width: 100%;
 	padding: 0.5rem 1rem;
-	background-color: #3e37a0b7;
+	background-color: #ac8f11b7;
 	color: #fff;
 	font-size: 1.1rem;
 	border: none;
@@ -121,7 +121,7 @@ textarea{
 .button{
 	width: 100%;
 	padding: 0.5rem 1rem;
-	background-color: #3e37a0b7;
+	background-color: #ac9011;
 	color: #fff;
 	font-size: 1.1rem;
 	border: none;
@@ -136,7 +136,7 @@ textarea{
 }
 
 .button:hover{
-    background-color: #3e37a0;
+    background-color: #928325;
 }
 
 .field:focus{
@@ -154,10 +154,10 @@ textarea{
 }
 
 #downloadBtn{
-	background-color: #40909abd;
+	background-color: #ac9011;
 }
 #downloadBtn:hover{
-	background-color: #2f6e76;
+	background-color: #928325;
 }
 #success{
 	width: 100%;
